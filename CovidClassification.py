@@ -21,7 +21,7 @@ if uploaded_file is not None:
   st.write(df)
 
 st.subheader('Data information: ')
-st.dataframe(df)
+st.dataframe(df.iloc[:,1:])
 st.write(df.describe())
 
 chart = st.bar_chart(df)
