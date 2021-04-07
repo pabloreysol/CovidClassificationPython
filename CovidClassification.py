@@ -5,13 +5,14 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import (accuracy_score)
 import numpy as np
+from urllib.request import urlopen
 
 st.write('''
 # COVID-19 detection    
 Detect if someone has COVID using machine learning and python ! 
 ''')
-
-image = Image.open('https://www.paho.org/sites/default/files/styles/flexslider_full/public/hero/2020-03/covid-19-1190x574-2-full.jpg?h=fdc0eb87&itok=CerQCpzv')
+url = 'https://www.paho.org/sites/default/files/styles/flexslider_full/public/hero/2020-03/covid-19-1190x574-2-full.jpg?h=fdc0eb87&itok=CerQCpzv'
+image = Image.open(urlopen(url))
 st.image(image, caption='ML', use_column_width=True)
 
 df = pd.read_csv('C:/Users/pavit/Desktop/Pablo/Proyectos/Covid/COVID19_MEXICO.csv', low_memory=False, encoding='latin-1')
