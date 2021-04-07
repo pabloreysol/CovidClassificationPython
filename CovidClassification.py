@@ -18,7 +18,7 @@ st.image(image, caption='ML', use_column_width=True)
 uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
   df = pd.read_csv(uploaded_file)
-  
+  st.write(df)
 st.subheader('Data information: ')
 st.dataframe(df)
 st.write(df.describe())
