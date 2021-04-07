@@ -15,8 +15,10 @@ url = 'https://www.paho.org/sites/default/files/styles/flexslider_full/public/he
 image = Image.open(urlopen(url))
 st.image(image, caption='ML', use_column_width=True)
 
-df = pd.read_csv('C:/Users/pavit/Desktop/Pablo/Proyectos/Covid/COVID19_MEXICO.csv', low_memory=False, encoding='latin-1')
-
+uploaded_file = st.file_uploader("Choose a file")
+if uploaded_file is not None:
+  df = pd.read_csv(uploaded_file)
+  
 st.subheader('Data information: ')
 st.dataframe(df)
 st.write(df.describe())
