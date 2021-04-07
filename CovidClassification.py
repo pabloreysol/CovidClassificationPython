@@ -22,9 +22,9 @@ if uploaded_file is not None:
 
 st.subheader('Data information: ')
 st.dataframe(df.iloc[:,1:])
-st.write(df.describe())
+st.write(df.iloc[:,1:].describe())
 
-chart = st.bar_chart(df)
+chart = st.bar_chart(df.iloc[:,1:])
 
 X = df.iloc[:, 0: 25].values
 Y = df.iloc[:, -1].values
