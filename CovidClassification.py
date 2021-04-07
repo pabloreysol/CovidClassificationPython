@@ -11,7 +11,7 @@ st.write('''
 Detect if someone has COVID using machine learning and python ! 
 ''')
 
-image = Image.open('C:/Users/pavit/Desktop/covid4.jpg')
+image = Image.open('C:\\Users\\pavit\\Desktop\\covid4.jpg')
 st.image(image, caption='ML', use_column_width=True)
 
 df = pd.read_csv('C:/Users/pavit/Desktop/Pablo/Proyectos/Covid/COVID19_MEXICO.csv', low_memory=False, encoding='latin-1')
