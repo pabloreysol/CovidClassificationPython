@@ -18,13 +18,13 @@ st.image(image, caption='ML', use_column_width=True)
 uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
   df = pd.read_csv(uploaded_file)
-  st.write(df)
+  st.write(df.drop('Unnamed: 0',axis=1,inplace=True))
 
 st.subheader('Data information: ')
-st.dataframe(df.iloc[:,1:])
-st.write(df.iloc[:,1:].describe())
+st.dataframe(df)
+st.write(df.describe())
 
-chart = st.bar_chart(df.iloc[:,1:])
+chart = st.bar_chart(df)
 
 X = df.iloc[:, 0: 25].values
 Y = df.iloc[:, -1].values
