@@ -26,10 +26,10 @@ st.write(df.describe())
 
 chart = st.bar_chart(df)
 
-X = df.iloc[:, 0: 25].values
+X = df.iloc[:, 0: 26].values
 Y = df.iloc[:, -1].values
 # Split the data
-X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.25, random_state=0)
+X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.30, random_state=0)
 
 
 # Get the user feature input from the user
